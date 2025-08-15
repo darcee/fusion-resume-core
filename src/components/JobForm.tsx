@@ -17,7 +17,7 @@ export const JobForm: React.FC<JobFormProps> = ({
     const [formData, setFormData] = useState<CreateJobInput>({
         jobTitle: '',
         companyName: editingJob ? editingJob.companyName: '',
-        email: ''
+        link: ''
     });
 
     useEffect(() => {
@@ -25,10 +25,10 @@ export const JobForm: React.FC<JobFormProps> = ({
             setFormData({
                 jobTitle: editingJob.jobTitle,
                 companyName: editingJob.companyName,
-                email: editingJob.email || ''
+                link: editingJob.link || ''
             });
         } else {
-            setFormData({ jobTitle: '', companyName: '', email: '' });
+            setFormData({ jobTitle: '', companyName: '', link: '' });
         }
     }, [editingJob]);
 
@@ -99,15 +99,15 @@ export const JobForm: React.FC<JobFormProps> = ({
                     </div>
 
                     <div>
-                        <label htmlFor="email" style={{ display: 'block', marginBottom: '5px' }}>
-                            Email
+                        <label htmlFor="link" style={{ display: 'block', marginBottom: '5px' }}>
+                            Link
                         </label>
                         <input
-                            id="email"
-                            type="email"
-                            name="email"
-                            placeholder="Enter email (optional)"
-                            value={formData.email}
+                            id="link"
+                            type="link"
+                            name="link"
+                            placeholder="Enter link (optional)"
+                            value={formData.link}
                             onChange={handleChange}
                             disabled={loading}
                             style={{

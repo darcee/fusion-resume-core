@@ -5,7 +5,7 @@ const schema = a.schema({
       .model({
         jobTitle: a.string().required(),
         companyName: a.string(),
-        email: a.string(),
+        link: a.string(),
       })
       .authorization((allow) => [allow.publicApiKey()]),
 });

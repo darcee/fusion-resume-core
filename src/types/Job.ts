@@ -2,7 +2,7 @@ export interface Job {
     id: string;
     jobTitle: string;
     companyName: string;
-    email?: string | null;
+    link?: string | null;
     createdAt: string;
     updatedAt: string;
 }
@@ -10,12 +10,12 @@ export interface Job {
 export interface CreateJobInput {
     jobTitle: string;
     companyName: string;
-    email?: string;
+    link?: string;
 }
 
 export interface UpdateJobInput {
     id: string;
     jobTitle: string;
     companyName: string;
-    email?: string;
+    link?: string;
 }
